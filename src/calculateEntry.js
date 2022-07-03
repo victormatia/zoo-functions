@@ -7,13 +7,15 @@ function countEntrants(entrants) {
   return { adult: onlyAdults, child: onlyChilds, senior: onlySeniors };
 }
 
+const { prices } = data;
+
 function calculateEntry(entrants) {
   if (entrants === undefined || Object.entries(entrants).length === 0) return 0;
   const { adult, child, senior } = countEntrants(entrants);
   const amount = {
-    adults: 49.99 * adult,
-    childs: 20.99 * child,
-    seniors: 24.99 * senior,
+    adults: prices.adult * adult,
+    childs: prices.child * child,
+    seniors: prices.senior * senior,
   };
   return amount.adults + amount.childs + amount.seniors;
 }

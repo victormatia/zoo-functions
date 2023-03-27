@@ -5,7 +5,7 @@ const data = require('../data/zoo_data');
 const allRegions = ['NE', 'NW', 'SE', 'SW'];
 
 const getAnimalByRegion = (region) => { // retorna um array contendo o nome de todas as espécies de uma região
-  const animalsSelecteds = data.species.filter((specie) => specie.location === region);
+  const animalsSelecteds = data.species.filter((specie) => specie.location === region); // utilizar a função da linha 23
   const nameAnimals = animalsSelecteds.map((animal) => animal.name);
   return nameAnimals;
 };
